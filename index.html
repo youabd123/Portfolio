@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | .NET Developer Student</title>
+  <meta name="description" content="Portfolio – .NET-utvecklarstudent som söker LIA hösten 2026." />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-slate-100">
+  <!-- Top bar -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <a href="#top" class="font-semibold tracking-tight">Din Portfolio</a>
+
+      <nav class="hidden gap-6 text-sm text-slate-200 md:flex">
+        <a class="hover:text-white" href="#about">Om</a>
+        <a class="hover:text-white" href="#skills">Stack</a>
+        <a class="hover:text-white" href="#projects">Projekt</a>
+        <a class="hover:text-white" href="#contact">Kontakt</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#contact"
+           class="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-slate-200">
+          Söker LIA HT 2026
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="top">
+    <section class="mx-auto max-w-6xl px-4 py-14 md:py-20">
+      <div class="grid gap-10 md:grid-cols-2 md:items-center">
+        <div>
+          <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">
+            <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+            Tillgänglig för LIA: 31 aug – 6 nov 2026
+          </p>
+
+          <h1 class="mt-5 text-4xl font-bold leading-tight tracking-tight md:text-5xl">
+            Hej, jag är <span class="text-emerald-300">[Ditt Namn]</span> — Systemutvecklare .NET
+          </h1>
+
+          <p class="mt-4 text-slate-200 leading-relaxed">
+            Jag bygger datadrivna applikationer med fokus på backend, databaser och tydlig struktur.
+            Just nu söker jag en LIA-plats där jag får bidra i ett team och utveckla verkliga system.
+          </p>
+
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href="#projects"
+               class="rounded-xl bg-emerald-400 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-emerald-300">
+              Se projekt
+            </a>
+            <a href="#contact"
+               class="rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">
+              Kontakta mig
+            </a>
+            <a href="TODO_GITHUB" target="_blank" rel="noreferrer"
+               class="rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">
+              GitHub
+            </a>
+            <a href="TODO_LINKEDIN" target="_blank" rel="noreferrer"
+               class="rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">
+              LinkedIn
+            </a>
+          </div>
+
+          <div class="mt-7 flex flex-wrap gap-2 text-xs text-slate-300">
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">C#</span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">.NET</span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">SQL Server</span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">LINQ</span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Git/GitHub</span>
+          </div>
+        </div>
+
+        <!-- Right side card -->
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg">
+          <h2 class="text-lg font-semibold">Vad jag söker på LIA</h2>
+          <ul class="mt-4 space-y-3 text-sm text-slate-200">
+            <li class="flex gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span>
+              Backendutveckling i .NET (affärslogik, API:er, integrationer)
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span>
+              Databaser: SQL, CRUD, JOINs, modellering, rapporter
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span>
+              Teamarbete: Git-flöde, code review, test & dokumentation
+            </li>
+          </ul>
+
+          <div class="mt-6 rounded-xl border border-white/10 bg-slate-950/40 p-4">
+            <p class="text-xs text-slate-300">Kontakt</p>
+            <p class="mt-1 text-sm font-semibold">TODO_EMAIL</p>
+            <p class="mt-1 text-sm text-slate-200">Göteborg / Remote</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="border-t border-white/10">
+      <div class="mx-auto max-w-6xl px-4 py-14">
+        <h2 class="text-2xl font-bold tracking-tight">Om mig</h2>
+        <p class="mt-4 max-w-3xl text-slate-200 leading-relaxed">
+          Jag studerar Systemutveckling .NET och gillar att bygga lösningar som är robusta, tydliga och lätta att underhålla.
+          I gruppprojekt har jag ofta tagit ansvar för testning/QA, dokumentation och struktur, samtidigt som jag bygger funktionalitet.
+        </p>
+
+        <div class="mt-8 grid gap-4 md:grid-cols-3">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <p class="text-sm font-semibold">Styrkor</p>
+            <p class="mt-2 text-sm text-slate-200">Struktur • Ansvar • Snabblärd • Problemlösning</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <p class="text-sm font-semibold">Fokus</p>
+            <p class="mt-2 text-sm text-slate-200">Backend • Databaser • Affärslogik • Kvalitet</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <p class="text-sm font-semibold">Mål</p>
+            <p class="mt-2 text-sm text-slate-200">LIA HT 2026 → bidra i team, leverera värde och växa snabbt</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="border-t border-white/10">
+      <div class="mx-auto max-w-6xl px-4 py-14">
+        <h2 class="text-2xl font-bold tracking-tight">Teknisk stack</h2>
+
+        <div class="mt-8 grid gap-4 md:grid-cols-2">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <h3 class="font-semibold">Backend</h3>
+            <ul class="mt-3 space-y-2 text-sm text-slate-200">
+              <li>• C#, .NET</li>
+              <li>• OOP, LINQ</li>
+              <li>• REST (grund)</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <h3 class="font-semibold">Databas</h3>
+            <ul class="mt-3 space-y-2 text-sm text-slate-200">
+              <li>• SQL Server</li>
+              <li>• CRUD, JOINs, normalisering</li>
+              <li>• Database First (scaffolding)</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <h3 class="font-semibold">Verktyg</h3>
+            <ul class="mt-3 space-y-2 text-sm text-slate-200">
+              <li>• Visual Studio</li>
+              <li>• Git & GitHub</li>
+              <li>• Felsökning & loggning</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <h3 class="font-semibold">Arbetssätt</h3>
+            <ul class="mt-3 space-y-2 text-sm text-slate-200">
+              <li>• Agilt (Scrum)</li>
+              <li>• Test/QA + dokumentation</li>
+              <li>• Struktur & tydlighet</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="border-t border-white/10">
+      <div class="mx-auto max-w-6xl px-4 py-14">
+        <div class="flex items-end justify-between gap-6">
+          <div>
+            <h2 class="text-2xl font-bold tracking-tight">Projekt</h2>
+            <p class="mt-2 text-sm text-slate-200">Här är några saker jag har byggt. (Byt ut till dina riktiga projekt.)</p>
+          </div>
+        </div>
+
+        <div class="mt-8 grid gap-4 md:grid-cols-2">
+          <!-- Project card -->
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <h3 class="text-lg font-semibold">Travel Journal (Console App)</h3>
+            <p class="mt-2 text-sm text-slate-200">
+              Menybaserad app för resor och budget med JSON-lagring och LINQ för rapporter.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-300">
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">C#</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">LINQ</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">JSON</span>
+            </div>
+            <div class="mt-5 flex gap-3">
+              <a class="rounded-xl bg-emerald-400 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-emerald-300"
+                 href="TODO_PROJECT1_DEMO" target="_blank" rel="noreferrer">Demo</a>
+              <a class="rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold hover:bg-white/10"
+                 href="TODO_PROJECT1_CODE" target="_blank" rel="noreferrer">Kod</a>
+            </div>
+          </article>
+
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <h3 class="text-lg font-semibold">Database First – SQL + .NET</h3>
+            <p class="mt-2 text-sm text-slate-200">
+              Relationsdatabas med CRUD och JOINs, kopplad till .NET via scaffolding (Database First).
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-300">
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">SQL Server</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">CRUD</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Database First</span>
+            </div>
+            <div class="mt-5 flex gap-3">
+              <a class="rounded-xl bg-emerald-400 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-emerald-300"
+                 href="TODO_PROJECT2_DEMO" target="_blank" rel="noreferrer">Demo</a>
+              <a class="rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold hover:bg-white/10"
+                 href="TODO_PROJECT2_CODE" target="_blank" rel="noreferrer">Kod</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="border-t border-white/10">
+      <div class="mx-auto max-w-6xl px-4 py-14">
+        <h2 class="text-2xl font-bold tracking-tight">Kontakt</h2>
+        <p class="mt-3 max-w-2xl text-slate-200">
+          Vill du prata LIA hösten 2026, projekt eller samarbeten? Skriv gärna till mig.
+        </p>
+
+        <div class="mt-8 grid gap-4 md:grid-cols-2">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <p class="text-sm font-semibold">Snabb kontakt</p>
+
+<p class="mt-3 text-sm text-slate-200">
+  📩 <a href="mailto:Yousuf.abdulrahman123@gmail.com"
+        class="hover:text-emerald-300 underline">
+        Yousuf.abdulrahman123@gmail.com
+      </a>
+</p>
+
+<p class="mt-2 text-sm text-slate-200">
+  🔗 <a href="https://www.linkedin.com/in/yousuf-hashim-062194388/"
+        target="_blank"
+        class="hover:text-emerald-300 underline">
+        LinkedIn Profil
+      </a>
+</p>
+
+<p class="mt-2 text-sm text-slate-200">
+  💻 <a href="https://github.com/youabd123"
+        target="_blank"
+        class="hover:text-emerald-300 underline">
+        GitHub
+      </a>
+</p>
+
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <p class="text-sm font-semibold">Mail-mall (copy/paste)</p>
+            <div class="mt-3 rounded-xl border border-white/10 bg-slate-950/40 p-4 text-sm text-slate-200">
+              Hej! Jag studerar Systemutveckling .NET och söker LIA (31 aug – 6 nov 2026).<br/>
+              Jag är särskilt intresserad av backend/.NET och databaser (SQL Server, CRUD, LINQ).<br/>
+              Finns det möjlighet att diskutera en praktikplats hos er?
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-white/10 py-10">
+      <div class="mx-auto max-w-6xl px-4 text-sm text-slate-400">
+        © <span id="year"></span> [Ditt Namn] • Byggd med HTML + Tailwind
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
