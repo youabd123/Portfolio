@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
@@ -15,7 +14,7 @@
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background-color: #050816; 
-            background-image: radial-gradient(circle at 50% 0%, #1a1f35 0%, #050816 70%);
+            background-image: radial-gradient(circle at 50% 0%, #1a1f35 0%, #050816 75%);
             color: #f8fafc; 
             overflow-x: hidden; 
         }
@@ -29,149 +28,119 @@
             -webkit-text-fill-color: transparent; 
         }
 
-        .project-slideshow { position: relative; width: 100%; height: 240px; overflow: hidden; border-radius: 1rem 1rem 0 0; background: #0f172a; }
-        .slideshow-image { 
-            position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; 
-            transition: opacity 1s ease-in-out; opacity: 0; 
-        }
-        .slideshow-image.active { opacity: 1; }
-
         .custom-card { 
-            background: rgba(17, 25, 40, 0.75); 
-            backdrop-filter: blur(16px); 
+            background: rgba(17, 25, 40, 0.6); 
+            backdrop-filter: blur(12px); 
             border: 1px solid rgba(255, 255, 255, 0.1); 
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
-        .custom-card:hover { transform: translateY(-10px); border-color: #2dd4bf; box-shadow: 0 20px 40px -10px rgba(45, 212, 191, 0.2); }
 
         .typing-cursor::after { content: '|'; animation: blink 1s step-start infinite; color: #2dd4bf; }
         @keyframes blink { 50% { opacity: 0; } }
     </style>
 </head>
-<body class="antialiased selection:bg-teal-500 selection:text-white">
+<body class="antialiased">
 
-    <nav class="fixed w-full bg-[#050816]/90 backdrop-blur-md border-b border-white/5 z-50">
+    <nav class="fixed w-full bg-[#050816]/80 backdrop-blur-md border-b border-white/5 z-50">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="font-bold text-2xl tracking-tighter uppercase text-white">
+            <div class="font-bold text-2xl tracking-tighter text-white">
                 YOUSUF <span class="text-teal-400">HASHIM</span>
             </div>
         </div>
     </nav>
 
-    <section id="hero" class="relative min-h-screen flex items-center px-6 pt-20">
+    <section id="hero" class="relative min-h-[80vh] flex items-center px-6 pt-20">
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-7 reveal active">
-                <h1 class="text-6xl md:text-7xl font-extrabold text-white mb-6 leading-none tracking-tighter">
+            <div class="lg:col-span-12 reveal active">
+                <h1 class="text-6xl md:text-8xl font-extrabold text-white mb-6 tracking-tighter">
                     Fullstack<br><span class="text-gradient">.NET Utvecklare</span>
                 </h1>
-                <p class="text-xl text-slate-400 mb-6 max-w-xl leading-relaxed">
+                <p class="text-xl text-slate-400 mb-8 max-w-2xl leading-relaxed">
                     Jag bygger applikationer med fokus på .NET, React och SQL. Mitt mål är att alltid skriva clean code som fungerar i längden.
                 </p>
                 <div class="text-gray-400 text-lg mb-8 font-mono h-8">
                     <span>Fokus:</span> <span id="typing-text" class="text-teal-400 font-bold typing-cursor"></span>
                 </div>
-                <div class="flex flex-wrap gap-4">
-                    <a href="https://github.com/youabd123" target="_blank" class="bg-teal-500 text-slate-950 px-8 py-3 rounded-xl font-extrabold hover:bg-teal-400 transition">GITHUB</a>
-                    <a href="#contact" class="bg-white/5 text-white border border-white/10 px-8 py-3 rounded-xl font-extrabold hover:bg-white/10 transition">KONTAKTA MIG</a>
-                </div>
-            </div>
-
-            <div class="lg:col-span-5 reveal active">
-                <div class="bg-slate-800/50 p-8 rounded-[2rem] border border-white/10 shadow-2xl">
-                    <div class="flex justify-between items-center mb-8">
-                        <span class="text-slate-400 text-xs font-bold uppercase tracking-widest">Kompetens</span>
-                        <div class="flex items-center gap-2 bg-teal-500/10 border border-teal-500/20 px-3 py-1 rounded-full text-[10px] text-teal-400 font-bold">ÖPPEN FÖR LIA</div>
-                    </div>
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
-                            <div class="text-teal-400 text-xl mt-1"><i class="devicon-csharp-plain"></i></div>
-                            <div><h4 class="text-white font-bold text-sm uppercase tracking-wide">Backend</h4><p class="text-xs text-slate-400">C#, .NET, Web API</p></div>
-                        </div>
-                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
-                            <div class="text-blue-400 text-xl mt-1"><i class="devicon-microsoftsqlserver-plain"></i></div>
-                            <div><h4 class="text-white font-bold text-sm uppercase tracking-wide">Data</h4><p class="text-xs text-slate-400">SQL Server & Relationsdatabaser</p></div>
-                        </div>
-                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
-                            <div class="text-purple-400 text-xl mt-1"><i class="devicon-react-original"></i></div>
-                            <div><h4 class="text-white font-bold text-sm uppercase tracking-wide">Frontend</h4><p class="text-xs text-slate-400">React, JavaScript, Tailwind</p></div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-24 px-6 bg-[#070b1d]">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div class="reveal">
-                <h2 class="text-4xl font-extrabold text-white mb-2">Om mig</h2>
-                <h3 class="text-teal-400 font-bold mb-6 uppercase tracking-widest text-sm">Vem jag är</h3>
-                <div class="space-y-4 text-slate-400 text-lg leading-relaxed">
-                    <p>Jag bygger applikationer med fokus på stabilitet och funktion. Genom att kombinera kraften i .NET med flexibiliteten i React skapar jag lösningar som täcker hela kedjan.</p>
-                    <p>För mig handlar utveckling om att skriva förutsägbar kod som underlättar för teamet. Jag letar efter ett team där jag kan växa och bidra från dag ett.</p>
-                </div>
-            </div>
-            <div class="reveal">
-                <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 shadow-xl">
-                    <div class="flex justify-between items-center mb-4 pb-4 border-b border-gray-800">
-                        <div class="flex items-center gap-2 text-white font-semibold">
-                            <i class="devicon-github-original text-teal-400"></i> <span>Kodaktivitet</span>
+    <section id="skills" class="py-24 px-4">
+        <div class="max-w-6xl mx-auto">
+            <span class="text-teal-400 text-sm font-bold tracking-widest uppercase mb-2 block text-center">Kompetens</span>
+            <h2 class="text-4xl font-bold text-white mb-12 text-center">Tekniska Färdigheter</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 reveal active">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-700">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-white font-bold">C# / .NET</span>
+                            <span class="text-[10px] text-slate-500 uppercase">Avancerad</span>
                         </div>
-                        <span class="text-[10px] text-slate-500 uppercase tracking-widest">Senaste 12 månaderna</span>
+                        <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-teal-500 w-[90%]"></div>
+                        </div>
                     </div>
-                    <div class="overflow-x-auto">
-                        <img src="https://ghchart.rshah.org/2dd4bf/youabd123" alt="GitHub Chart" class="min-w-[600px] w-full opacity-90">
+                    <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-700">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-white font-bold">SQL & Data</span>
+                            <span class="text-[10px] text-slate-500 uppercase">Avancerad</span>
+                        </div>
+                        <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500 w-[85%]"></div>
+                        </div>
+                    </div>
+                    <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-700">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-white font-bold">Frontend</span>
+                            <span class="text-[10px] text-slate-500 uppercase">Medel</span>
+                        </div>
+                        <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-purple-500 w-[70%]"></div>
+                        </div>
+                    </div>
+                    <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-700">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-white font-bold">DevOps</span>
+                            <span class="text-[10px] text-slate-500 uppercase">Verktyg</span>
+                        </div>
+                        <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-green-500 w-[60%]"></div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="bg-slate-900/30 border border-slate-800 p-8 rounded-2xl flex flex-col justify-center">
+                    <span class="text-[10px] text-slate-500 uppercase tracking-widest mb-3">Fokusområde</span>
+                    <p class="text-xl text-slate-300 leading-relaxed">
+                        Expertis inom <span class="text-white font-semibold">C#, .NET Core, Minimal APIs</span>, och skalbara arkitekturmönster som <span class="text-teal-400">CQRS och Clean Architecture</span>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-slate-900/40 border border-slate-800 rounded-2xl p-8 reveal active">
+                <div class="flex justify-between items-center mb-6 pb-4 border-b border-slate-800">
+                    <div class="flex items-center gap-3 text-white font-bold">
+                        <i class="fab fa-github text-2xl"></i> 
+                        <span>Kodaktivitet (Live från GitHub)</span>
+                    </div>
+                    <a href="https://github.com/youabd123" target="_blank" class="text-xs text-teal-400 hover:text-white transition">Visa Profil →</a>
+                </div>
+                <div class="overflow-x-auto">
+                    <img src="https://ghchart.rshah.org/2dd4bf/youabd123" alt="GitHub Chart" class="min-w-[700px] w-full brightness-110">
+                </div>
+                <p class="mt-4 text-center text-[10px] text-slate-500 uppercase tracking-widest italic">Pushar kod och levererar features kontinuerligt.</p>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-24 px-6">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-extrabold text-white mb-12">Mina Projekt</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                
-                <article class="custom-card rounded-2xl overflow-hidden reveal">
-                    <div class="project-slideshow" id="ss1">
-                        <img src="Skärmbild (743).png" class="slideshow-image active">
-                        <img src="Skärmbild (744).png" class="slideshow-image">
-                        <img src="Skärmbild (740).png" class="slideshow-image">
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-white mb-4">Travel Journal</h3>
-                        <p class="text-slate-400 mb-6 italic">En C#-applikation för resebudgetering byggd med Spectre.Console och JSON-lagring.</p>
-                        <a href="https://github.com/youabd123" target="_blank" class="font-bold text-teal-400 hover:text-white transition inline-flex items-center gap-2 uppercase text-xs">Kolla koden ↗</a>
-                    </div>
-                </article>
-
-                <article class="custom-card rounded-2xl overflow-hidden reveal">
-                    <div class="project-slideshow" id="ss2">
-                        <img src="Skärmbild (741).jpg" class="slideshow-image active">
-                        <img src="Skärmbild (742).jpg" class="slideshow-image">
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-white mb-4">Database First – SQL + .NET</h3>
-                        <p class="text-slate-400 mb-6 italic">Integration mellan SQL Server och .NET genom Entity Framework Core.</p>
-                        <a href="https://github.com/youabd123" target="_blank" class="font-bold text-teal-400 hover:text-white transition inline-flex items-center gap-2 uppercase text-xs">Kolla koden ↗</a>
-                    </div>
-                </article>
-
-            </div>
+    <section id="contact" class="py-32 px-6 text-center">
+        <div class="max-w-2xl mx-auto reveal active">
+            <h2 class="text-4xl font-bold text-white mb-6 tracking-tight">Hör av dig!</h2>
+            <p class="text-slate-400 mb-10 text-lg">Jag letar efter ett bra team att växa med – skicka ett mejl.</p>
+            <a href="mailto:Yousuf.abdulrahman123@gmail.com" class="bg-teal-500 text-slate-950 px-12 py-4 rounded-2xl font-bold hover:scale-105 transition inline-block">SKICKA MEJL</a>
         </div>
     </section>
-
-    <section id="contact" class="py-32 px-6">
-        <div class="max-w-3xl mx-auto custom-card rounded-[3rem] p-16 text-center reveal">
-            <h2 class="text-4xl font-extrabold text-white mb-6 uppercase tracking-tighter">Hör av dig!</h2>
-            <p class="text-slate-400 mb-10 text-lg">Letar du efter en strukturerad utvecklare? Jag letar efter ett bra team att växa med.</p>
-            <a href="mailto:Yousuf.abdulrahman123@gmail.com" class="inline-block bg-teal-500 text-slate-950 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-teal-400 transition shadow-lg shadow-teal-500/20">SKICKA MEJL</a>
-        </div>
-    </section>
-
-    <footer class="py-10 text-center text-slate-600 text-[10px] font-bold uppercase tracking-widest">
-        <p>© <span id="year"></span> Yousuf Hashim • .NET Fullstack</p>
-    </footer>
 
     <script>
         // Typing Effect
@@ -181,28 +150,13 @@
             const curr = phrases[pIdx];
             document.getElementById("typing-text").textContent = isDel ? curr.substring(0, cIdx--) : curr.substring(0, cIdx++);
             let speed = isDel ? 50 : 100;
-            if (!isDel && cIdx === curr.length) { isDel = true; speed = 2000; }
+            if (!isDel && cIdx === curr.length) { isDel = true; speed = 2500; }
             else if (isDel && cIdx === 0) { isDel = false; pIdx = (pIdx + 1) % phrases.length; speed = 500; }
             setTimeout(type, speed);
         }
 
-        // Slideshow Logic
-        function startSS(id) {
-            const imgs = document.querySelectorAll(`#${id} .slideshow-image`);
-            let curr = 0;
-            if(imgs.length < 2) return;
-            setInterval(() => {
-                imgs[curr].classList.remove('active');
-                curr = (curr + 1) % imgs.length;
-                imgs[curr].classList.add('active');
-            }, 3500);
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
             type();
-            startSS('ss1');
-            startSS('ss2');
-            document.getElementById("year").textContent = new Date().getFullYear();
             const obs = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('active')), {threshold: 0.1});
             document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
         });
