@@ -84,6 +84,88 @@
         @keyframes blink {
             50% { opacity: 0; }
         }
+
+        .project-preview {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            min-height: 210px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(2, 6, 23, 0.9));
+        }
+
+        .project-preview::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 38%);
+        }
+
+        .project-preview--pizza {
+            background:
+                radial-gradient(circle at top left, rgba(249, 115, 22, 0.32), transparent 26%),
+                linear-gradient(135deg, #3b1f16, #1f2937 55%, #111827);
+        }
+
+        .project-preview--travel {
+            background:
+                radial-gradient(circle at top left, rgba(45, 212, 191, 0.26), transparent 28%),
+                linear-gradient(135deg, #0f172a, #10243a 55%, #0b1220);
+        }
+
+        .project-preview--tracker {
+            background:
+                radial-gradient(circle at top left, rgba(59, 130, 246, 0.28), transparent 30%),
+                linear-gradient(135deg, #111827, #172554 55%, #0f172a);
+        }
+
+        .project-preview--library {
+            background:
+                radial-gradient(circle at top left, rgba(129, 140, 248, 0.3), transparent 28%),
+                linear-gradient(135deg, #111827, #312e81 55%, #0f172a);
+        }
+
+        .project-window {
+            position: absolute;
+            inset: 1rem;
+            padding: 1rem;
+            border-radius: 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(15, 23, 42, 0.72);
+            backdrop-filter: blur(10px);
+        }
+
+        .project-window-light {
+            background: rgba(255, 248, 240, 0.92);
+            color: #1f2937;
+        }
+
+        .project-chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.35rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #cbd5e1;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .project-bar {
+            height: 0.45rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+        }
+
+        .project-bar > span {
+            display: block;
+            height: 100%;
+            border-radius: 999px;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -97,7 +179,7 @@
                 <a href="#hero" class="hover:text-teal-400 transition">Hem</a>
                 <a href="#about" class="hover:text-teal-400 transition">Om mig</a>
                 <a href="#goal" class="hover:text-teal-400 transition">Mål</a>
-                <a href="#skills" class="hover:text-teal-400 transition">Skills</a>
+                <a href="#skills" class="hover:text-teal-400 transition">Kompetens</a>
                 <a href="#projects" class="hover:text-teal-400 transition">Projekt</a>
                 <a href="#contact" class="hover:text-teal-400 transition">Kontakt</a>
             </div>
@@ -237,7 +319,7 @@
 
     <section id="skills" class="py-32 px-6 bg-[#030712]">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-extrabold text-white mb-16 text-center tracking-tighter uppercase">Tekniska Färdigheter</h2>
+            <h2 class="text-4xl font-extrabold text-white mb-16 text-center tracking-tighter uppercase">Tekniska färdigheter</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 reveal">
                 <div class="space-y-6">
@@ -290,7 +372,7 @@
                         <h3 class="text-xl font-bold text-white uppercase tracking-tighter">Kodaktivitet</h3>
                     </div>
                     <a href="https://github.com/youabd123" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-teal-400 uppercase tracking-widest hover:text-white transition">
-                        Visa Profil →
+                        Visa profil →
                     </a>
                 </div>
                 <div class="overflow-x-auto">
@@ -302,11 +384,78 @@
 
     <section id="projects" class="py-32 px-6">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-extrabold text-white mb-16 tracking-tighter uppercase text-center">Utvalda projekt</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"></div>
-                
+            <div class="max-w-3xl mx-auto text-center mb-16 reveal active">
+                <span class="text-teal-400 text-sm font-bold uppercase tracking-[0.3em] mb-3 block">Projekt</span>
+                <h2 class="text-4xl font-extrabold text-white mb-6 tracking-tighter uppercase">Utvalda projekt</h2>
+                <p class="text-slate-400 text-lg leading-relaxed">
+                    Här är några projekt som visar hur jag arbetar med backend, databaser och frontend. Jag vill att varje projekt ska vara tydligt, användbart och presenteras på ett sätt som känns genomarbetat.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <article class="glass-card p-8 rounded-[2rem] reveal">
-                    <div class="flex justify-between items-start mb-8">
+                    <div class="project-preview project-preview--pizza mb-8">
+                        <div class="project-window project-window-light flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span class="project-chip !text-orange-700 !border-orange-200/60 !bg-orange-100/70">Restaurant UI</span>
+                                <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500">Live</span>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.35em] text-orange-700 font-bold mb-3">Calzoni Pizzeria</p>
+                                <div class="space-y-3">
+                                    <div class="h-3 rounded-full bg-orange-100 w-2/3"></div>
+                                    <div class="h-3 rounded-full bg-orange-100 w-1/2"></div>
+                                    <div class="grid grid-cols-2 gap-3 pt-2">
+                                        <div class="h-20 rounded-2xl bg-white border border-orange-100"></div>
+                                        <div class="h-20 rounded-2xl bg-white border border-orange-100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center text-orange-300 text-2xl">
+                            <i class="fas fa-pizza-slice"></i>
+                        </div>
+                        <span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em]">HTML / CSS / JS</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tighter">Calzoni Pizzeria</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        Responsiv restaurangsida med modern layout, fast navigation, tvåspråkigt innehåll och en tydlig menysektion. Projektet visar mitt frontendfokus på design, struktur och användarupplevelse.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://youabd123.github.io/calzoni-pizzeria/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-orange-300 hover:text-white transition uppercase tracking-widest">
+                            Live demo <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://github.com/youabd123/calzoni-pizzeria" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-slate-300 hover:text-white transition uppercase tracking-widest">
+                            GitHub <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="glass-card p-8 rounded-[2rem] reveal">
+                    <div class="project-preview project-preview--travel mb-8">
+                        <div class="project-window flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span class="project-chip">C# / JSON</span>
+                                <i class="fas fa-route text-teal-300"></i>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="text-[11px] uppercase tracking-[0.3em] text-teal-300 font-bold mb-2">Travel Journal</div>
+                                    <div class="project-bar"><span class="w-3/4 bg-gradient-to-r from-teal-400 to-cyan-400"></span></div>
+                                </div>
+                                <div class="grid gap-3">
+                                    <div class="h-12 rounded-xl border border-white/5 bg-white/5"></div>
+                                    <div class="h-12 rounded-xl border border-white/5 bg-white/5"></div>
+                                    <div class="h-12 rounded-xl border border-white/5 bg-white/5"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-start mb-6">
                         <div class="w-14 h-14 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 text-2xl">
                             <i class="fas fa-route"></i>
                         </div>
@@ -322,7 +471,27 @@
                 </article>
 
                 <article class="glass-card p-8 rounded-[2rem] reveal">
-                    <div class="flex justify-between items-start mb-8">
+                    <div class="project-preview project-preview--tracker mb-8">
+                        <div class="project-window flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span class="project-chip">C# / OOP</span>
+                                <i class="fas fa-briefcase text-blue-300"></i>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="grid grid-cols-3 gap-3">
+                                    <div class="h-16 rounded-2xl bg-white/5 border border-white/5"></div>
+                                    <div class="h-16 rounded-2xl bg-white/5 border border-white/5"></div>
+                                    <div class="h-16 rounded-2xl bg-white/5 border border-white/5"></div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="h-3 rounded-full bg-white/10 w-4/5"></div>
+                                    <div class="h-3 rounded-full bg-white/10 w-2/3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-start mb-6">
                         <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-2xl">
                             <i class="fas fa-briefcase"></i>
                         </div>
@@ -336,36 +505,41 @@
                         Källkod <i class="fas fa-arrow-right"></i>
                     </a>
                 </article>
-</article>
 
-<!-- ✅ KLISTRA IN HÄR -->
-<article class="glass-card p-8 rounded-[2rem] reveal">
-    <div class="flex justify-between items-start mb-8">
-        <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-2xl">
-            <i class="fas fa-database"></i>
-        </div>
-        <span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em]">SQL / Database</span>
-    </div>
+                <article class="glass-card p-8 rounded-[2rem] reveal">
+                    <div class="project-preview project-preview--library mb-8">
+                        <div class="project-window flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span class="project-chip">SQL / Database</span>
+                                <i class="fas fa-database text-indigo-300"></i>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div class="h-20 rounded-2xl bg-white/5 border border-white/5"></div>
+                                    <div class="h-20 rounded-2xl bg-white/5 border border-white/5"></div>
+                                </div>
+                                <div class="project-bar"><span class="w-4/5 bg-gradient-to-r from-indigo-400 to-violet-400"></span></div>
+                            </div>
+                        </div>
+                    </div>
 
-    <h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tighter">
-        Library Management Database
-    </h3>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-2xl">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em]">SQL / Database</span>
+                    </div>
 
-    <p class="text-slate-400 mb-8 leading-relaxed">
-        Grupprojekt där vi designade och byggde en databas för att hantera böcker, användare och utlåning. 
-        Fokus låg på databasstruktur, relationer mellan tabeller och CRUD-operationer i SQL. 
-        Jag arbetade med att skapa tabeller och skriva SQL-frågor.
-    </p>
+                    <h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tighter">Library Management Database</h3>
 
-    <a href="https://github.com/youabd123/Library-track-DB" target="_blank" rel="noopener noreferrer"
-       class="inline-flex items-center gap-2 text-xs font-bold text-indigo-400 hover:text-white transition uppercase tracking-widest">
-        Källkod <i class="fas fa-arrow-right"></i>
-    </a>
-</article>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        Grupprojekt där vi designade och byggde en databas för att hantera böcker, användare och utlåning. Fokus låg på databasstruktur, relationer mellan tabeller och CRUD-operationer i SQL.
+                    </p>
 
-</div>
-</div>
-</section>
+                    <a href="https://github.com/youabd123/Library-track-DB" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-indigo-400 hover:text-white transition uppercase tracking-widest">
+                        Källkod <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
             </div>
         </div>
     </section>
