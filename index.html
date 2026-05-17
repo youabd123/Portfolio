@@ -125,6 +125,18 @@
                 linear-gradient(135deg, #111827, #312e81 55%, #0f172a);
         }
 
+        .project-preview--architecture {
+            background:
+                radial-gradient(circle at top left, rgba(45, 212, 191, 0.3), transparent 28%),
+                linear-gradient(135deg, #052e2b, #0f172a 55%, #020617);
+        }
+
+        .project-preview--team {
+            background:
+                radial-gradient(circle at top left, rgba(168, 85, 247, 0.28), transparent 30%),
+                linear-gradient(135deg, #1e1b4b, #111827 58%, #020617);
+        }
+
         .project-window {
             position: absolute;
             inset: 1rem;
@@ -165,6 +177,59 @@
             display: block;
             height: 100%;
             border-radius: 999px;
+        }
+
+        .project-slider {
+            overflow: hidden;
+        }
+
+        .project-track {
+            display: flex;
+            transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .project-slide {
+            flex: 0 0 100%;
+            padding: 0 0.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .project-slide {
+                flex-basis: 50%;
+            }
+        }
+
+        .slider-button {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 23, 42, 0.8);
+            color: #cbd5e1;
+            transition: all 0.2s ease;
+        }
+
+        .slider-button:hover {
+            color: #ffffff;
+            border-color: rgba(45, 212, 191, 0.5);
+            background: rgba(20, 184, 166, 0.12);
+        }
+
+        .slider-dot {
+            width: 0.6rem;
+            height: 0.6rem;
+            border-radius: 999px;
+            background: rgba(148, 163, 184, 0.35);
+            transition: all 0.2s ease;
+        }
+
+        .slider-dot.active {
+            width: 1.8rem;
+            background: #2dd4bf;
         }
     </style>
 </head>
@@ -392,155 +457,256 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <article class="glass-card p-8 rounded-[2rem] reveal">
-                    <div class="project-preview project-preview--pizza mb-8">
-                        <div class="project-window project-window-light flex flex-col justify-between">
-                            <div class="flex items-center justify-between">
-                                <span class="project-chip !text-orange-700 !border-orange-200/60 !bg-orange-100/70">Restaurant UI</span>
-                                <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500">Live</span>
-                            </div>
-                            <div>
-                                <p class="text-[11px] uppercase tracking-[0.35em] text-orange-700 font-bold mb-3">Calzoni Pizzeria</p>
-                                <div class="space-y-3">
-                                    <div class="h-3 rounded-full bg-orange-100 w-2/3"></div>
-                                    <div class="h-3 rounded-full bg-orange-100 w-1/2"></div>
-                                    <div class="grid grid-cols-2 gap-3 pt-2">
-                                        <div class="h-20 rounded-2xl bg-white border border-orange-100"></div>
-                                        <div class="h-20 rounded-2xl bg-white border border-orange-100"></div>
+            <div class="flex items-center justify-between gap-4 mb-8 reveal active">
+                <p class="text-sm text-slate-500 font-bold uppercase tracking-[0.25em]">6 projekt</p>
+                <div class="flex items-center gap-3">
+                    <button type="button" class="slider-button" id="projectPrev" aria-label="Föregående projekt">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <button type="button" class="slider-button" id="projectNext" aria-label="Nästa projekt">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="project-slider reveal active">
+                <div class="project-track" id="projectTrack">
+                    <article class="project-slide">
+                        <div class="glass-card p-8 rounded-[2rem] h-full flex flex-col">
+                            <div class="project-preview project-preview--architecture mb-8">
+                                <div class="project-window flex flex-col justify-between">
+                                    <div class="flex items-center justify-between">
+                                        <span class="project-chip">Clean Architecture</span>
+                                        <i class="fas fa-layer-group text-teal-300"></i>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div>
+                                            <div class="text-[11px] uppercase tracking-[0.3em] text-teal-300 font-bold mb-2">API Structure</div>
+                                            <div class="project-bar"><span class="w-5/6 bg-gradient-to-r from-teal-400 to-blue-400"></span></div>
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <div class="h-12 rounded-xl border border-white/5 bg-white/5"></div>
+                                            <div class="h-12 rounded-xl border border-white/5 bg-white/5"></div>
+                                            <div class="h-12 rounded-xl border border-white/5 bg-white/5"></div>
+                                            <div class="h-12 rounded-xl border border-white/5 bg-white/5"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center text-orange-300 text-2xl">
-                            <i class="fas fa-pizza-slice"></i>
-                        </div>
-                        <span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em]">HTML / CSS / JS</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tighter">Calzoni Pizzeria</h3>
-                    <p class="text-slate-400 mb-8 leading-relaxed">
-                        Responsiv restaurangsida med modern layout, fast navigation, tvåspråkigt innehåll och en tydlig menysektion. Projektet visar mitt frontendfokus på design, struktur och användarupplevelse.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://youabd123.github.io/calzoni-pizzeria/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-orange-300 hover:text-white transition uppercase tracking-widest">
-                            Live demo <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="https://github.com/youabd123/calzoni-pizzeria" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-slate-300 hover:text-white transition uppercase tracking-widest">
-                            GitHub <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="glass-card p-8 rounded-[2rem] reveal">
-                    <div class="project-preview project-preview--travel mb-8">
-                        <div class="project-window flex flex-col justify-between">
-                            <div class="flex items-center justify-between">
-                                <span class="project-chip">C# / JSON</span>
-                                <i class="fas fa-route text-teal-300"></i>
-                            </div>
-                            <div class="space-y-4">
-                                <div>
-                                    <div class="text-[11px] uppercase tracking-[0.3em] text-teal-300 font-bold mb-2">Travel Journal</div>
-                                    <div class="project-bar"><span class="w-3/4 bg-gradient-to-r from-teal-400 to-cyan-400"></span></div>
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 text-2xl">
+                                    <i class="fas fa-layer-group"></i>
                                 </div>
-                                <div class="grid gap-3">
-                                    <div class="h-12 rounded-xl border border-white/5 bg-white/5"></div>
-                                    <div class="h-12 rounded-xl border border-white/5 bg-white/5"></div>
-                                    <div class="h-12 rounded-xl border border-white/5 bg-white/5"></div>
+                                <span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em]">C# / .NET / API</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tighter">Clean Architecture API</h3>
+                            <p class="text-slate-400 mb-6 leading-relaxed">
+                                Backendprojekt byggt med Clean Architecture där ansvar delas upp mellan Domain, Application, Infrastructure och API. Fokus låg på tydlig struktur, testbarhet och separation mellan affärslogik och datalager.
+                            </p>
+                            <p class="text-sm text-slate-500 mb-8 leading-relaxed">
+                                Min roll: backendstruktur, API-flöde, datamodellering och koppling mot datalager.
+                            </p>
+                            <a href="https://github.com/youabd123" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 text-xs font-bold text-teal-400 hover:text-white transition uppercase tracking-widest">
+                                GitHub <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-slide">
+                        <div class="glass-card p-8 rounded-[2rem] h-full flex flex-col">
+                            <div class="project-preview project-preview--team mb-8">
+                                <div class="project-window flex flex-col justify-between">
+                                    <div class="flex items-center justify-between">
+                                        <span class="project-chip">Team Project</span>
+                                        <i class="fas fa-people-group text-purple-300"></i>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="grid grid-cols-3 gap-3">
+                                            <div class="h-16 rounded-2xl bg-white/5 border border-white/5"></div>
+                                            <div class="h-16 rounded-2xl bg-white/5 border border-white/5"></div>
+                                            <div class="h-16 rounded-2xl bg-white/5 border border-white/5"></div>
+                                        </div>
+                                        <div class="project-bar"><span class="w-2/3 bg-gradient-to-r from-purple-400 to-teal-400"></span></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="w-14 h-14 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 text-2xl">
-                            <i class="fas fa-route"></i>
-                        </div>
-                        <span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em]">C# / JSON</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tighter">Travel Journal</h3>
-                    <p class="text-slate-400 mb-8 leading-relaxed">
-                        Konsolapplikation byggd i C# och .NET där användaren kan planera resor, hantera budget och spara data med JSON. Projektet fokuserade på struktur, användarflöde och ren kod.
-                    </p>
-                    <a href="https://github.com/b1-loop/Travel-Journal" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-teal-400 hover:text-white transition uppercase tracking-widest">
-                        Källkod <i class="fas fa-arrow-right"></i>
-                    </a>
-                </article>
-
-                <article class="glass-card p-8 rounded-[2rem] reveal">
-                    <div class="project-preview project-preview--tracker mb-8">
-                        <div class="project-window flex flex-col justify-between">
-                            <div class="flex items-center justify-between">
-                                <span class="project-chip">C# / OOP</span>
-                                <i class="fas fa-briefcase text-blue-300"></i>
-                            </div>
-                            <div class="space-y-4">
-                                <div class="grid grid-cols-3 gap-3">
-                                    <div class="h-16 rounded-2xl bg-white/5 border border-white/5"></div>
-                                    <div class="h-16 rounded-2xl bg-white/5 border border-white/5"></div>
-                                    <div class="h-16 rounded-2xl bg-white/5 border border-white/5"></div>
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-300 text-2xl">
+                                    <i class="fas fa-people-group"></i>
                                 </div>
-                                <div class="space-y-3">
-                                    <div class="h-3 rounded-full bg-white/10 w-4/5"></div>
-                                    <div class="h-3 rounded-full bg-white/10 w-2/3"></div>
+                                <span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em]">Grupprojekt</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tighter">Pågående grupprojekt</h3>
+                            <p class="text-slate-400 mb-6 leading-relaxed">
+                                Grupprojekt där vi bygger en applikation tillsammans med Git/GitHub och tydlig ansvarsfördelning. Projektet visar hur jag arbetar i team, planerar kod och kopplar teknik till ett gemensamt mål.
+                            </p>
+                            <p class="text-sm text-slate-500 mb-8 leading-relaxed">
+                                Min roll: backend, datamodellering, struktur och samarbete i utvecklingsflödet.
+                            </p>
+                            <span class="mt-auto inline-flex items-center gap-2 text-xs font-bold text-purple-300 uppercase tracking-widest">
+                                Pågående projekt <i class="fas fa-code-branch"></i>
+                            </span>
+                        </div>
+                    </article>
+
+                    <article class="project-slide">
+                        <div class="glass-card p-8 rounded-[2rem] h-full flex flex-col">
+                            <div class="project-preview project-preview--pizza mb-8">
+                                <div class="project-window project-window-light flex flex-col justify-between">
+                                    <div class="flex items-center justify-between">
+                                        <span class="project-chip !text-orange-700 !border-orange-200/60 !bg-orange-100/70">Restaurant UI</span>
+                                        <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500">Live</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-[11px] uppercase tracking-[0.35em] text-orange-700 font-bold mb-3">Calzoni Pizzeria</p>
+                                        <div class="space-y-3">
+                                            <div class="h-3 rounded-full bg-orange-100 w-2/3"></div>
+                                            <div class="h-3 rounded-full bg-orange-100 w-1/2"></div>
+                                            <div class="grid grid-cols-2 gap-3 pt-2">
+                                                <div class="h-20 rounded-2xl bg-white border border-orange-100"></div>
+                                                <div class="h-20 rounded-2xl bg-white border border-orange-100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-2xl">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em]">C# / OOP</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tighter">Job Application Tracker</h3>
-                    <p class="text-slate-400 mb-8 leading-relaxed">
-                        Konsolprojekt i C# där användaren kan lägga till, visa, uppdatera och ta bort jobbansökningar. Fokus låg på OOP, menyflöde och tydlig kodstruktur.
-                    </p>
-                    <a href="https://github.com/youabd123/job-application-tracker" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition uppercase tracking-widest">
-                        Källkod <i class="fas fa-arrow-right"></i>
-                    </a>
-                </article>
-
-                <article class="glass-card p-8 rounded-[2rem] reveal">
-                    <div class="project-preview project-preview--library mb-8">
-                        <div class="project-window flex flex-col justify-between">
-                            <div class="flex items-center justify-between">
-                                <span class="project-chip">SQL / Database</span>
-                                <i class="fas fa-database text-indigo-300"></i>
-                            </div>
-                            <div class="space-y-4">
-                                <div class="grid grid-cols-2 gap-3">
-                                    <div class="h-20 rounded-2xl bg-white/5 border border-white/5"></div>
-                                    <div class="h-20 rounded-2xl bg-white/5 border border-white/5"></div>
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center text-orange-300 text-2xl">
+                                    <i class="fas fa-pizza-slice"></i>
                                 </div>
-                                <div class="project-bar"><span class="w-4/5 bg-gradient-to-r from-indigo-400 to-violet-400"></span></div>
+                                <span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em]">HTML / CSS / JS</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tighter">Calzoni Pizzeria</h3>
+                            <p class="text-slate-400 mb-8 leading-relaxed">
+                                Responsiv restaurangsida med modern layout, fast navigation, tvåspråkigt innehåll och en tydlig menysektion. Projektet visar mitt frontendfokus på design, struktur och användarupplevelse.
+                            </p>
+                            <div class="mt-auto flex flex-wrap gap-4">
+                                <a href="https://youabd123.github.io/calzoni-pizzeria/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-orange-300 hover:text-white transition uppercase tracking-widest">
+                                    Live demo <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <a href="https://github.com/youabd123/calzoni-pizzeria" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-slate-300 hover:text-white transition uppercase tracking-widest">
+                                    GitHub <i class="fab fa-github"></i>
+                                </a>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-2xl">
-                            <i class="fas fa-database"></i>
+                    <article class="project-slide">
+                        <div class="glass-card p-8 rounded-[2rem] h-full flex flex-col">
+                            <div class="project-preview project-preview--library mb-8">
+                                <div class="project-window flex flex-col justify-between">
+                                    <div class="flex items-center justify-between">
+                                        <span class="project-chip">SQL / Database</span>
+                                        <i class="fas fa-database text-indigo-300"></i>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <div class="h-20 rounded-2xl bg-white/5 border border-white/5"></div>
+                                            <div class="h-20 rounded-2xl bg-white/5 border border-white/5"></div>
+                                        </div>
+                                        <div class="project-bar"><span class="w-4/5 bg-gradient-to-r from-indigo-400 to-violet-400"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-2xl">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em]">SQL / Database</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tighter">Library Management Database</h3>
+                            <p class="text-slate-400 mb-8 leading-relaxed">
+                                Grupprojekt där vi designade och byggde en databas för att hantera böcker, användare och utlåning. Fokus låg på databasstruktur, relationer mellan tabeller och CRUD-operationer i SQL.
+                            </p>
+                            <a href="https://github.com/youabd123/Library-track-DB" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 text-xs font-bold text-indigo-400 hover:text-white transition uppercase tracking-widest">
+                                Källkod <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
-                        <span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em]">SQL / Database</span>
-                    </div>
+                    </article>
 
-                    <h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tighter">Library Management Database</h3>
+                    <article class="project-slide">
+                        <div class="glass-card p-8 rounded-[2rem] h-full flex flex-col">
+                            <div class="project-preview project-preview--travel mb-8">
+                                <div class="project-window flex flex-col justify-between">
+                                    <div class="flex items-center justify-between">
+                                        <span class="project-chip">C# / JSON</span>
+                                        <i class="fas fa-route text-teal-300"></i>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div>
+                                            <div class="text-[11px] uppercase tracking-[0.3em] text-teal-300 font-bold mb-2">Travel Journal</div>
+                                            <div class="project-bar"><span class="w-3/4 bg-gradient-to-r from-teal-400 to-cyan-400"></span></div>
+                                        </div>
+                                        <div class="grid gap-3">
+                                            <div class="h-12 rounded-xl border border-white/5 bg-white/5"></div>
+                                            <div class="h-12 rounded-xl border border-white/5 bg-white/5"></div>
+                                            <div class="h-12 rounded-xl border border-white/5 bg-white/5"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                    <p class="text-slate-400 mb-8 leading-relaxed">
-                        Grupprojekt där vi designade och byggde en databas för att hantera böcker, användare och utlåning. Fokus låg på databasstruktur, relationer mellan tabeller och CRUD-operationer i SQL.
-                    </p>
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 text-2xl">
+                                    <i class="fas fa-route"></i>
+                                </div>
+                                <span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em]">C# / JSON</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tighter">Travel Journal</h3>
+                            <p class="text-slate-400 mb-8 leading-relaxed">
+                                Konsolapplikation byggd i C# och .NET där användaren kan planera resor, hantera budget och spara data med JSON. Projektet fokuserade på struktur, användarflöde och ren kod.
+                            </p>
+                            <a href="https://github.com/b1-loop/Travel-Journal" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 text-xs font-bold text-teal-400 hover:text-white transition uppercase tracking-widest">
+                                Källkod <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
 
-                    <a href="https://github.com/youabd123/Library-track-DB" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-indigo-400 hover:text-white transition uppercase tracking-widest">
-                        Källkod <i class="fas fa-arrow-right"></i>
-                    </a>
-                </article>
+                    <article class="project-slide">
+                        <div class="glass-card p-8 rounded-[2rem] h-full flex flex-col">
+                            <div class="project-preview project-preview--tracker mb-8">
+                                <div class="project-window flex flex-col justify-between">
+                                    <div class="flex items-center justify-between">
+                                        <span class="project-chip">C# / OOP</span>
+                                        <i class="fas fa-briefcase text-blue-300"></i>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="grid grid-cols-3 gap-3">
+                                            <div class="h-16 rounded-2xl bg-white/5 border border-white/5"></div>
+                                            <div class="h-16 rounded-2xl bg-white/5 border border-white/5"></div>
+                                            <div class="h-16 rounded-2xl bg-white/5 border border-white/5"></div>
+                                        </div>
+                                        <div class="space-y-3">
+                                            <div class="h-3 rounded-full bg-white/10 w-4/5"></div>
+                                            <div class="h-3 rounded-full bg-white/10 w-2/3"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-2xl">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em]">C# / OOP</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tighter">Job Application Tracker</h3>
+                            <p class="text-slate-400 mb-8 leading-relaxed">
+                                Konsolprojekt i C# där användaren kan lägga till, visa, uppdatera och ta bort jobbansökningar. Fokus låg på OOP, menyflöde och tydlig kodstruktur.
+                            </p>
+                            <a href="https://github.com/youabd123/job-application-tracker" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition uppercase tracking-widest">
+                                Källkod <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
             </div>
+
+            <div class="flex justify-center gap-2 mt-8" id="projectDots" aria-label="Projekt navigation"></div>
         </div>
     </section>
 
@@ -612,6 +778,56 @@
         document.addEventListener('DOMContentLoaded', () => {
             type();
             document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+            const track = document.getElementById('projectTrack');
+            const prev = document.getElementById('projectPrev');
+            const next = document.getElementById('projectNext');
+            const dots = document.getElementById('projectDots');
+            const slides = Array.from(document.querySelectorAll('.project-slide'));
+            let projectIndex = 0;
+
+            function visibleSlides() {
+                return window.matchMedia('(min-width: 768px)').matches ? 2 : 1;
+            }
+
+            function maxIndex() {
+                return Math.max(0, slides.length - visibleSlides());
+            }
+
+            function renderDots() {
+                dots.innerHTML = '';
+                for (let i = 0; i <= maxIndex(); i++) {
+                    const button = document.createElement('button');
+                    button.type = 'button';
+                    button.className = `slider-dot${i === projectIndex ? ' active' : ''}`;
+                    button.setAttribute('aria-label', `Visa projekt ${i + 1}`);
+                    button.addEventListener('click', () => {
+                        projectIndex = i;
+                        updateSlider();
+                    });
+                    dots.appendChild(button);
+                }
+            }
+
+            function updateSlider() {
+                projectIndex = Math.min(projectIndex, maxIndex());
+                const slideWidth = slides[0]?.getBoundingClientRect().width || 0;
+                track.style.transform = `translateX(-${projectIndex * slideWidth}px)`;
+                renderDots();
+            }
+
+            prev.addEventListener('click', () => {
+                projectIndex = projectIndex === 0 ? maxIndex() : projectIndex - 1;
+                updateSlider();
+            });
+
+            next.addEventListener('click', () => {
+                projectIndex = projectIndex === maxIndex() ? 0 : projectIndex + 1;
+                updateSlider();
+            });
+
+            window.addEventListener('resize', updateSlider);
+            updateSlider();
         });
     </script>
 </body>
