@@ -133,8 +133,8 @@
 
         .project-preview--team {
             background:
-                radial-gradient(circle at top left, rgba(168, 85, 247, 0.28), transparent 30%),
-                linear-gradient(135deg, #1e1b4b, #111827 58%, #020617);
+                radial-gradient(circle at top left, rgba(245, 158, 11, 0.28), transparent 30%),
+                linear-gradient(135deg, #3b1f14, #111827 58%, #020617);
         }
 
         .project-window {
@@ -518,36 +518,47 @@
                             <div class="project-preview project-preview--team mb-8">
                                 <div class="project-window flex flex-col justify-between">
                                     <div class="flex items-center justify-between">
-                                        <span class="project-chip">Team Project</span>
-                                        <i class="fas fa-people-group text-purple-300"></i>
+                                        <span class="project-chip">Restaurant System</span>
+                                        <i class="fas fa-utensils text-amber-300"></i>
                                     </div>
                                     <div class="space-y-4">
-                                        <div class="grid grid-cols-3 gap-3">
-                                            <div class="h-16 rounded-2xl bg-white/5 border border-white/5"></div>
-                                            <div class="h-16 rounded-2xl bg-white/5 border border-white/5"></div>
-                                            <div class="h-16 rounded-2xl bg-white/5 border border-white/5"></div>
+                                        <div>
+                                            <div class="text-[11px] uppercase tracking-[0.3em] text-amber-300 font-bold mb-2">Trattoria</div>
+                                            <div class="project-bar"><span class="w-4/5 bg-gradient-to-r from-amber-300 to-teal-400"></span></div>
                                         </div>
-                                        <div class="project-bar"><span class="w-2/3 bg-gradient-to-r from-purple-400 to-teal-400"></span></div>
+                                        <div class="grid grid-cols-3 gap-3">
+                                            <div class="h-16 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center text-amber-200/80">
+                                                <i class="fas fa-receipt"></i>
+                                            </div>
+                                            <div class="h-16 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center text-amber-200/80">
+                                                <i class="fas fa-book-open"></i>
+                                            </div>
+                                            <div class="h-16 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center text-amber-200/80">
+                                                <i class="fas fa-calendar-check"></i>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="flex justify-between items-start mb-6">
-                                <div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-300 text-2xl">
-                                    <i class="fas fa-people-group"></i>
+                                <div class="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center text-amber-300 text-2xl">
+                                    <i class="fas fa-utensils"></i>
                                 </div>
-                                <span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em]">Grupprojekt</span>
+                                <span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em]">API / Client</span>
                             </div>
-                            <h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tighter">Pågående grupprojekt</h3>
-                            <p class="text-slate-400 mb-6 leading-relaxed">
-                                Grupprojekt där vi bygger en applikation tillsammans med Git/GitHub och tydlig ansvarsfördelning. Projektet visar hur jag arbetar i team, planerar kod och kopplar teknik till ett gemensamt mål.
+                            <h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tighter">Trattoria</h3>
+                            <p class="text-slate-400 mb-8 leading-relaxed">
+                                Grupprojekt där vi byggde Trattoria, ett restaurangsystem med separat API och klient. Projektet visar teamarbete, tydlig ansvarsfördelning, Git/GitHub-flöde och hur backend och frontend kopplas ihop i en komplett applikation.
                             </p>
-                            <p class="text-sm text-slate-500 mb-8 leading-relaxed">
-                                Min roll: backend, datamodellering, struktur och samarbete i utvecklingsflödet.
-                            </p>
-                            <span class="mt-auto inline-flex items-center gap-2 text-xs font-bold text-purple-300 uppercase tracking-widest">
-                                Pågående projekt <i class="fas fa-code-branch"></i>
-                            </span>
+                            <div class="mt-auto flex flex-wrap gap-4">
+                                <a href="https://github.com/youabd123/restaurant-system-api" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-amber-300 hover:text-white transition uppercase tracking-widest">
+                                    Källkod API <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://github.com/youabd123/restaurant-system-client" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-teal-400 hover:text-white transition uppercase tracking-widest">
+                                    Källkod Client <i class="fab fa-github"></i>
+                                </a>
+                            </div>
                         </div>
                     </article>
 
