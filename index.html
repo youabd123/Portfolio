@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yousuf Hashim | .NET Developer</title>
+    <title>Yousuf Hashim | .NET-utveckling</title>
+    <meta name="description" content="Portfolio för Yousuf Hashim, systemutvecklingsstudent med fokus på C#, .NET och SQL Server.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
@@ -20,17 +21,6 @@
             overflow-x: hidden; 
         }
 
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
         .text-gradient { 
             background: linear-gradient(135deg, #2dd4bf 0%, #3b82f6 50%, #a855f7 100%); 
             -webkit-background-clip: text; 
@@ -75,11 +65,7 @@
             100% { transform: scale(3); opacity: 0; }
         }
 
-        .typing-cursor::after {
-            content: '|';
-            animation: blink 1s step-start infinite;
-            color: #2dd4bf;
-        }
+
 
         @keyframes blink {
             50% { opacity: 0; }
@@ -179,68 +165,23 @@
             border-radius: 999px;
         }
 
-        .project-slider {
-            overflow: hidden;
-        }
+        section { scroll-margin-top: 7rem; }
+        a:focus-visible { outline: 2px solid #5eead4; outline-offset: 4px; }
 
-        .project-track {
-            display: flex;
-            transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-            will-change: transform;
-        }
-
-        .project-slide {
-            flex: 0 0 100%;
-            padding: 0 0.75rem;
-        }
-
-        @media (min-width: 768px) {
-            .project-slide {
-                flex-basis: 50%;
-            }
-        }
-
-        .slider-button {
-            width: 3rem;
-            height: 3rem;
-            border-radius: 999px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(15, 23, 42, 0.8);
-            color: #cbd5e1;
-            transition: all 0.2s ease;
-        }
-
-        .slider-button:hover {
-            color: #ffffff;
-            border-color: rgba(45, 212, 191, 0.5);
-            background: rgba(20, 184, 166, 0.12);
-        }
-
-        .slider-dot {
-            width: 0.6rem;
-            height: 0.6rem;
-            border-radius: 999px;
-            background: rgba(148, 163, 184, 0.35);
-            transition: all 0.2s ease;
-        }
-
-        .slider-dot.active {
-            width: 1.8rem;
-            background: #2dd4bf;
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto !important; }
+            *, *::before, *::after { animation: none !important; transition: none !important; }
         }
     </style>
 </head>
 <body class="antialiased">
 
     <nav class="fixed w-full top-0 bg-[#030712]/80 backdrop-blur-md border-b border-white/5 z-50">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex flex-wrap items-center justify-between gap-x-8 gap-y-2">
             <div class="font-extrabold text-lg md:text-xl tracking-tighter text-white">
                 YOUSUF<span class="text-teal-400">HASHIM</span>
             </div>
-            <div class="flex gap-4 md:gap-8 text-[11px] md:text-[10px] font-bold uppercase tracking-widest text-slate-400">
+            <div class="flex flex-wrap gap-x-4 gap-y-2 md:gap-x-8 text-[11px] md:text-[10px] font-bold uppercase tracking-widest text-slate-400">
                 <a href="#hero" class="hover:text-teal-400 transition">Hem</a>
                 <a href="#about" class="hover:text-teal-400 transition">Om mig</a>
                 <a href="#goal" class="hover:text-teal-400 transition">Mål</a>
@@ -251,30 +192,26 @@
         </div>
     </nav>
 
-    <section id="hero" class="relative min-h-screen flex items-center px-6 pt-16">
+    <section id="hero" class="relative min-h-screen flex items-center px-6 pt-32 pb-16">
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
-            <div class="reveal active">
+            <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 mb-6">
                     <span class="pulse-online"></span>
                     <span class="text-[10px] text-teal-400 font-bold uppercase tracking-wider">Tillgänglig för LIA</span>
                 </div>
 
                 <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tighter leading-tight">
-                    Hej, jag är <br><span class="text-gradient">Yousuf Hashim</span>
+                    <span class="text-gradient">Yousuf Hashim</span>
                 </h1>
 
                 <p class="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
-                    Studerande inom systemutveckling med fokus på <span class="text-white font-medium">C#, .NET och databaser</span>. Jag bygger projekt för att utvecklas praktiskt och söker en LIA-plats där jag kan bidra, lära mig och växa i ett team.
+                    Jag studerar systemutveckling med fokus på <span class="text-white font-medium">C#, .NET och SQL Server</span>. I mina projekt bygger jag webb-API:er och applikationer där gränssnitt, backend och databas samverkar. Jag söker LIA inom .NET-utveckling.
                 </p>
 
-                <div class="text-slate-500 text-sm mb-10 font-mono">
-                    > <span id="typing-text" class="text-teal-400 font-bold typing-cursor"></span>
-                </div>
-
                 <div class="flex flex-wrap gap-4">
-                    <a href="https://github.com/youabd123" target="_blank" rel="noopener noreferrer" class="bg-white text-slate-950 px-8 py-3.5 rounded-xl font-bold hover:bg-teal-400 transition shadow-xl text-xs uppercase tracking-widest">
-                        GitHub
+                    <a href="#projects" class="bg-white text-slate-950 px-8 py-3.5 rounded-xl font-bold hover:bg-teal-400 transition shadow-xl text-xs uppercase tracking-widest">
+                        Se mina projekt
                     </a>
                     <a href="https://www.linkedin.com/in/yousuf-hashim-062194388/" target="_blank" rel="noopener noreferrer" class="bg-white/5 text-white border border-white/10 px-8 py-3.5 rounded-xl font-bold hover:bg-white/10 transition text-xs uppercase tracking-widest">
                         LinkedIn
@@ -285,7 +222,7 @@
                 </div>
             </div>
 
-            <div class="reveal active">
+            <div>
                 <div class="glass-card rounded-[2.5rem] p-10 relative overflow-hidden">
                     <div class="flex items-center gap-4 mb-8 pb-6 border-b border-white/5">
                         <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-teal-400 to-blue-600 flex items-center justify-center shadow-lg">
@@ -325,7 +262,7 @@
     <section id="about" class="py-24 px-6 bg-white/[0.01]">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             
-            <div class="lg:col-span-8 reveal">
+            <div class="lg:col-span-8 ">
                 <span class="text-teal-400 text-sm font-bold uppercase tracking-[0.3em] mb-3 block">Berättelse</span>
                 <h2 class="text-4xl font-extrabold text-white mb-8 tracking-tighter uppercase">Om mig</h2>
                 <div class="space-y-6 text-slate-400 text-lg leading-relaxed border-l-2 border-slate-800 pl-6">
@@ -338,7 +275,7 @@
                 </div>
             </div>
 
-            <div class="lg:col-span-4 reveal">
+            <div class="lg:col-span-4 ">
                 <div class="glass-card rounded-3xl p-8 border-t-2 border-t-teal-500">
                     <div class="flex justify-between items-center mb-6 pb-4 border-b border-white/5">
                         <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Tech Stack</span>
@@ -373,7 +310,7 @@
     </section>
 
     <section id="goal" class="py-24 px-6">
-        <div class="max-w-4xl mx-auto text-center reveal">
+        <div class="max-w-4xl mx-auto text-center ">
             <span class="text-teal-400 text-sm font-bold uppercase tracking-[0.3em] mb-3 block">Mål</span>
             <h2 class="text-4xl font-extrabold text-white mb-8 tracking-tighter uppercase">Vad jag söker</h2>
             <p class="text-slate-400 text-lg leading-relaxed">
@@ -386,7 +323,7 @@
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-extrabold text-white mb-16 text-center tracking-tighter uppercase">Tekniska färdigheter</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 reveal">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 ">
                 <div class="space-y-6">
                     <div>
                         <div class="flex justify-between mb-2">
@@ -430,7 +367,7 @@
                 </div>
             </div>
 
-            <div class="glass-card mt-16 p-10 rounded-3xl reveal active">
+            <div class="glass-card mt-16 p-10 rounded-3xl ">
                 <div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-4 pb-4 border-b border-white/5">
                     <div class="flex items-center gap-4">
                         <i class="fab fa-github text-3xl text-white"></i>
@@ -449,29 +386,16 @@
 
     <section id="projects" class="py-32 px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="max-w-3xl mx-auto text-center mb-16 reveal active">
+            <div class="max-w-3xl mx-auto text-center mb-16 ">
                 <span class="text-teal-400 text-sm font-bold uppercase tracking-[0.3em] mb-3 block">Projekt</span>
                 <h2 class="text-4xl font-extrabold text-white mb-6 tracking-tighter uppercase">Utvalda projekt</h2>
                 <p class="text-slate-400 text-lg leading-relaxed">
-                    Här är några projekt som visar hur jag arbetar med backend, databaser och frontend. Jag vill att varje projekt ska vara tydligt, användbart och presenteras på ett sätt som känns genomarbetat.
+                    Utforska mina projekt inom webb-API:er, databaser och webbapplikationer.
                 </p>
             </div>
 
-            <div class="flex items-center justify-between gap-4 mb-8 reveal active">
-                <p class="text-sm text-slate-500 font-bold uppercase tracking-[0.25em]">6 projekt</p>
-                <div class="flex items-center gap-3">
-                    <button type="button" class="slider-button" id="projectPrev" aria-label="Föregående projekt">
-                        <i class="fas fa-arrow-left"></i>
-                    </button>
-                    <button type="button" class="slider-button" id="projectNext" aria-label="Nästa projekt">
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div class="project-slider reveal active">
-                <div class="project-track" id="projectTrack">
-                    <article class="project-slide">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <article class="min-w-0">
                         <div class="glass-card p-8 rounded-[2rem] h-full flex flex-col">
                             <div class="project-preview project-preview--architecture mb-8">
                                 <div class="project-window flex flex-col justify-between">
@@ -513,7 +437,7 @@
                         </div>
                     </article>
 
-                    <article class="project-slide">
+                    <article class="min-w-0">
                         <div class="glass-card p-8 rounded-[2rem] h-full flex flex-col">
                             <div class="project-preview project-preview--team mb-8">
                                 <div class="project-window flex flex-col justify-between">
@@ -562,7 +486,7 @@
                         </div>
                     </article>
 
-                    <article class="project-slide">
+                    <article class="min-w-0">
                         <div class="glass-card p-8 rounded-[2rem] h-full flex flex-col">
                             <div class="project-preview project-preview--pizza mb-8">
                                 <div class="project-window project-window-light flex flex-col justify-between">
@@ -605,7 +529,7 @@
                         </div>
                     </article>
 
-                    <article class="project-slide">
+                    <article class="min-w-0">
                         <div class="glass-card p-8 rounded-[2rem] h-full flex flex-col">
                             <div class="project-preview project-preview--library mb-8">
                                 <div class="project-window flex flex-col justify-between">
@@ -639,7 +563,7 @@
                         </div>
                     </article>
 
-                    <article class="project-slide">
+                    <article class="min-w-0">
                         <div class="glass-card p-8 rounded-[2rem] h-full flex flex-col">
                             <div class="project-preview project-preview--travel mb-8">
                                 <div class="project-window flex flex-col justify-between">
@@ -677,7 +601,7 @@
                         </div>
                     </article>
 
-                    <article class="project-slide">
+                    <article class="min-w-0">
                         <div class="glass-card p-8 rounded-[2rem] h-full flex flex-col">
                             <div class="project-preview project-preview--tracker mb-8">
                                 <div class="project-window flex flex-col justify-between">
@@ -714,15 +638,12 @@
                             </a>
                         </div>
                     </article>
-                </div>
             </div>
-
-            <div class="flex justify-center gap-2 mt-8" id="projectDots" aria-label="Projekt navigation"></div>
         </div>
     </section>
 
     <section id="contact" class="py-40 px-6 text-center">
-        <div class="max-w-3xl mx-auto reveal active">
+        <div class="max-w-3xl mx-auto ">
             <h2 class="text-4xl font-extrabold text-white mb-8 tracking-tighter uppercase">Hör av dig</h2>
             <p class="text-xl text-slate-400 mb-12">
                 Jag söker en LIA-plats där jag kan fortsätta utvecklas inom .NET och systemutveckling tillsammans med ett team.
@@ -746,100 +667,5 @@
         <p class="text-[9px] text-slate-600 font-bold uppercase tracking-[0.5em]">© 2026 Yousuf Hashim • .NET Developer</p>
     </footer>
 
-    <script>
-        const phrases = [
-            "C# och .NET",
-            "SQL Server och EF Core",
-            "GitHub och versionshantering",
-            "LIA inom systemutveckling"
-        ];
-
-        let pIdx = 0;
-        let cIdx = 0;
-        let isDel = false;
-
-        function type() {
-            const curr = phrases[pIdx];
-            document.getElementById("typing-text").textContent = isDel
-                ? curr.substring(0, cIdx--)
-                : curr.substring(0, cIdx++);
-
-            let speed = isDel ? 60 : 100;
-
-            if (!isDel && cIdx === curr.length) {
-                isDel = true;
-                speed = 2500;
-            } else if (isDel && cIdx === 0) {
-                isDel = false;
-                pIdx = (pIdx + 1) % phrases.length;
-                speed = 500;
-            }
-
-            setTimeout(type, speed);
-        }
-
-        const obs = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            type();
-            document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-            const track = document.getElementById('projectTrack');
-            const prev = document.getElementById('projectPrev');
-            const next = document.getElementById('projectNext');
-            const dots = document.getElementById('projectDots');
-            const slides = Array.from(document.querySelectorAll('.project-slide'));
-            let projectIndex = 0;
-
-            function visibleSlides() {
-                return window.matchMedia('(min-width: 768px)').matches ? 2 : 1;
-            }
-
-            function maxIndex() {
-                return Math.max(0, slides.length - visibleSlides());
-            }
-
-            function renderDots() {
-                dots.innerHTML = '';
-                for (let i = 0; i <= maxIndex(); i++) {
-                    const button = document.createElement('button');
-                    button.type = 'button';
-                    button.className = `slider-dot${i === projectIndex ? ' active' : ''}`;
-                    button.setAttribute('aria-label', `Visa projekt ${i + 1}`);
-                    button.addEventListener('click', () => {
-                        projectIndex = i;
-                        updateSlider();
-                    });
-                    dots.appendChild(button);
-                }
-            }
-
-            function updateSlider() {
-                projectIndex = Math.min(projectIndex, maxIndex());
-                const slideWidth = slides[0]?.getBoundingClientRect().width || 0;
-                track.style.transform = `translateX(-${projectIndex * slideWidth}px)`;
-                renderDots();
-            }
-
-            prev.addEventListener('click', () => {
-                projectIndex = projectIndex === 0 ? maxIndex() : projectIndex - 1;
-                updateSlider();
-            });
-
-            next.addEventListener('click', () => {
-                projectIndex = projectIndex === maxIndex() ? 0 : projectIndex + 1;
-                updateSlider();
-            });
-
-            window.addEventListener('resize', updateSlider);
-            updateSlider();
-        });
-    </script>
 </body>
 </html>
